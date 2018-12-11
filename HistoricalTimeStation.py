@@ -6,14 +6,15 @@ in a specify moment in time'''
 
 
 ################### settings ###########################
-with open('codeTimeStation.txt', 'r') as tcode:
+''' This are the basic settings like the key for the API or the code to download the information from the server '''
+
+with open('Api_key.txt', 'r') as tcode:
     key_api = tcode.read()
 CODE = 34
 ########################################################
 
 
 class data_analizer:
-
     '''this part we take the information from timestation website and start analyze it'''
 
     def __init__(self, location):
