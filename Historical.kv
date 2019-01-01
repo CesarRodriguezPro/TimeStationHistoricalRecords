@@ -1,0 +1,134 @@
+#:import utils kivy.utils
+
+
+<ScatterTextWidget>:
+
+    canvas.before:
+        Color:
+            rgb: utils.get_color_from_hex('#000131')
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+
+            Image:
+                source: 'ibklogo.jpg'
+                keep_ratio: True
+                allow_stretch: False
+                opacity: 1
+                size_hint: None, None
+                size: 95, 50
+                pos_hint: {'center_x': 0.3, 'center_y': 0.60}
+
+            Label:
+                id:init_date
+                text: 'IBK Construction Group'
+                height: 50
+                font_size: 20
+                size_hint_y: None
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex('#01183f')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            size_hint_y: None
+            height: 40
+            valign: 'middle'
+
+            Label:
+                id:init_date
+                text: 'Initial Date'
+                height: 40
+                width:30
+                font_size: 15
+                size_hint_y: None
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+
+            TextInput:
+                id:init_date
+                width: 200
+                id: input1
+                font_size: 15
+                size_hint_y: None
+                height: 40
+                text: 'yyyy-mm-dd'
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+
+            Label:
+                width:30
+                text: 'Final Date'
+                height: 40
+                font_size: 15
+                size_hint_y: None
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+
+            TextInput:
+                id:last_date
+                width: 200
+                id: input2
+                font_size: 15
+                size_hint_y: None
+                height:40
+                text: 'yyyy-mm-dd'
+
+            Label:
+                text:'Time'
+                width:30
+                height: 40
+                font_size: 15
+                size_hint_y: None
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+
+            TextInput:
+                id:time
+                width: 200
+                id: input1
+                font_size: 15
+                size_hint_y: None
+                height: 40
+                text: 'HH:MM'
+
+            Button:
+                id:run
+                size_hint_y: None
+                text: 'Run'
+                height:40
+                font_size: 15
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex('#00050c')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: ' please introduce the date'
+                height: 30
+                font_size: 15
+                size_hint_y: 1.
+
+
+
+
