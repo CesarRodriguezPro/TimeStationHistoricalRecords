@@ -1,4 +1,6 @@
 #:import utils kivy.utils
+#:import MainGui
+
 
 
 <ScatterTextWidget>:
@@ -26,7 +28,6 @@
                 pos_hint: {'center_x': 0.3, 'center_y': 0.60}
 
             Label:
-                id:init_date
                 text: 'IBK Construction Group'
                 height: 50
                 font_size: 20
@@ -48,86 +49,110 @@
             valign: 'middle'
 
             Label:
-                id:init_date
-                text: 'Initial Date'
+                width:74
+                text: 'Location'
                 height: 40
-                width:30
                 font_size: 15
                 size_hint_y: None
+                size_hint_x: None
                 text_size: self.size
                 halign: 'right'
                 valign: 'middle'
 
             TextInput:
-                id:init_date
+                id:text_location
                 width: 200
-                id: input1
-                font_size: 15
-                size_hint_y: None
-                height: 40
-                text: 'yyyy-mm-dd'
-                text_size: self.size
-                halign: 'right'
-                valign: 'middle'
-
-            Label:
-                width:30
-                text: 'Final Date'
-                height: 40
-                font_size: 15
-                size_hint_y: None
-                text_size: self.size
-                halign: 'right'
-                valign: 'middle'
-
-            TextInput:
-                id:last_date
-                width: 200
-                id: input2
                 font_size: 15
                 size_hint_y: None
                 height:40
-                text: 'yyyy-mm-dd'
+
 
             Label:
-                text:'Time'
-                width:30
+                text:'Date'
                 height: 40
+                width:45
                 font_size: 15
                 size_hint_y: None
+                size_hint_x: None
                 text_size: self.size
                 halign: 'right'
                 valign: 'middle'
 
             TextInput:
-                id:time
+                id:input_date
                 width: 200
-                id: input1
                 font_size: 15
                 size_hint_y: None
                 height: 40
-                text: 'HH:MM'
+                input_location: False
 
-            Button:
-                id:run
-                size_hint_y: None
-                text: 'Run'
-                height:40
+            Label:
+                text:'Time (24Hr)'
+                width:90
+                height: 40
                 font_size: 15
+                size_hint_y: None
+                size_hint_x: None
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+
+            TextInput:
+                id:input_time
+                width: 200
+                font_size: 15
+                size_hint_y: None
+                height: 40
+                input_location: False
+
 
         BoxLayout:
             canvas.before:
                 Color:
-                    rgb: utils.get_color_from_hex('#00050c')
+                    rgb: utils.get_color_from_hex('#01183f')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            size_hint_y: None
+            height: 40
+
+            Button:
+                id:run
+                background_color: 85, 121, 0, .5
+                size_hint_y: None
+                text: 'Run'
+                height:40
+                font_size: 15
+                on_release: root.initialize_request()
+
+            Button:
+                id:export
+                background_color: 51, 51, 0, .5
+                size_hint_y: None
+                text: 'Export'
+                height:40
+                font_size: 15
+                on_release: root.export_result()
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex('#00056c')
                 Rectangle:
                     pos: self.pos
                     size: self.size
 
             Label:
-                text: ' please introduce the date'
+                id: print_out
+
+                text: ' please introduce the date in this format YYYY-MM-DD'
+
                 height: 30
                 font_size: 15
-                size_hint_y: 1.
+                size_hint_y: None
+
+
+
 
 
 

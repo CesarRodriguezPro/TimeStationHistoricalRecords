@@ -7,9 +7,7 @@ in a specify moment in time'''
 
 ################### settings ###########################
 ''' This are the basic settings like the key for the API or the code to download the information from the server '''
-
-with open('Api_key.txt', 'r') as tcode:
-    key_api = tcode.read()
+key_api = os.environ("TimeStation_key")
 CODE = 34
 ########################################################
 
